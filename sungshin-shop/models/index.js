@@ -20,3 +20,5 @@ db.order = require('./order')(sequelize, Sequelize);
 /** N : M user : goods */
 db.user.belongsToMany(db.goods, { through: 'ORDER', as: 'Ordered', foreignKey: 'userId' });
 db.goods.belongsToMany(db.user, { through: 'ORDER', as: 'Orderer', foreignKey: 'goodsId' });
+
+module.exports = db;
